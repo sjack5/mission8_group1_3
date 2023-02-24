@@ -11,11 +11,11 @@ namespace mission8_group1_3.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private QuadrantContext _QuadrantContext { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(QuadrantContext x)
         {
-            _logger = logger;
+            _QuadrantContext = x;
         }
 
         public IActionResult Index()
