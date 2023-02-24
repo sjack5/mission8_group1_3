@@ -13,7 +13,7 @@ namespace mission8_group1_3.Models
         public int taskId { get; set; }
         public DateTime dueDate { get; set; }
         [Required]
-        public int Quadrant { get; set; }
+        public string Quadrant { get; set; }
         public bool Completed { get; set; }
 
         //Building Foreign Key Relationship

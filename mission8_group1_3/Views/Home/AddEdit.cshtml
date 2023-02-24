@@ -23,10 +23,15 @@
 
         <label asp-for="CategoryID">CategoryID</label>
         <select asp-for="CategoryID">
-            <option value="Home">Home</option>
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Category)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+            @*<option value="Home">Home</option>
             <option value="School">School</option>
             <option value="Work">Work</option>
-            <option value="Church">Church</option>
+            <option value="Church">Church</option>*@
         </select><br />
 
         <label asp-for="Completed">Completed</label>
