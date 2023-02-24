@@ -14,10 +14,13 @@ namespace mission8_group1_3.Models
         public DateTime dueDate { get; set; }
         [Required]
         public int Quadrant { get; set; }
+        public bool Completed { get; set; }
+
         //Building Foreign Key Relationship
+        [Required]
         public int CategoryID { get; set; }
         public Category Category { get; set; } 
-        public bool Completed { get; set; }
+        
 
     }
 }
