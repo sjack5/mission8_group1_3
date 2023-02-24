@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Add or Edit ";
+}
+@model mission8_group1_3.Models.Quadrants_Model
+<h1>Fill Out Movie Information</h1>
+
+<div>
+    <form method="post">
+
+
+        <div asp-validation-summary="All"></div>
+
+        <label asp-for="dueDate">Due Date:</label>
+        <input asp-for="dueDate" /><br />
+
+        <label asp-for="Quadrant">Quadrant</label>
+        <select asp-for="Quadrant">
+            <option value="Quadrant1">Quadrant I: Important / Urgent</option>
+            <option value="Quadrant2">Quadrant II: Important / Not Urgent</option>
+            <option value="Quadrant3">Quadrant III: Not Important / Urgent</option>
+            <option value="Quadrant4">Quadrant IV: Not Important / Not Urgent</option>
+        </select><br />
+
+        <label asp-for="CategoryID">CategoryID</label>
+        <select asp-for="CategoryID">
+            <option value="Home">Home</option>
+            <option value="School">School</option>
+            <option value="Work">Work</option>
+            <option value="Church">Church</option>
+        </select><br />
+
+        <label asp-for="Completed">Completed</label>
+        <select asp-for="Completed">
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select><br />
+
+        <button type="submit">Submit Movie</button><br />
+    </form>
+</div>

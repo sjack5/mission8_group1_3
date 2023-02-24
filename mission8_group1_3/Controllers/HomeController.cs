@@ -22,6 +22,12 @@ namespace mission8_group1_3.Controllers
         {
             return View();
         }
+        public IActionResult AddEdit()
+        {
+            
+
+            return View();
+        }
 
         public IActionResult Privacy()
         {
