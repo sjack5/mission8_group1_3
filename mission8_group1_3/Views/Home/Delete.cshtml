@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Delete Response";
+}
+
+@model Quadrants_Model
+
+<h6>Confirm Deletion</h6>
+<br />
+<h7>Are you sure you want to delete the record for "@Model.Task"?</h7>
+@* form to delete film entry *@
+<form method="post" asp-controller="Home" asp-action="Delete">
+    <button type="submit">Delete</button>
+    <a asp-controller="Home" asp-action="QuadrantView" class="btn btn-primary">Cancel</a>
+    @* hidden input to find specific film to delete *@
+    <input type="hidden" asp-for="taskId" />
+</form>
