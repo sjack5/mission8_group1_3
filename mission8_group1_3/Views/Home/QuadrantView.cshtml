@@ -1,4 +1,73 @@
 ﻿@{
+    ViewData["Title"] = "Quadrant View";
 }
 
-<p>This is where I was thinking we could put our quadrant   -Spencer</p>
+@model List<Quadrants_Model>
+
+<h3>Steven Covey's Time Management Matrix</h3>
+
+<div class="container" style="padding-top:5rem;">
+    
+    <div class="row border">
+        <div class="col border" style="text-align:center;"><b>Steven Covey's Time Management Matrix</b></div>
+        <div class="w-100"></div>
+        <div class="col border">Urgent</div>
+        <div class="col border"> Not Urgent</div>
+        <div class="w-100"></div>
+
+        <div class="col border">
+            column 1
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadrant1")
+                {
+                    @*<p>@x.Task</p>*@
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                }
+            }
+        </div>
+        <div class="col border">
+            column 2
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadtant2")
+                {
+                    @*<p>@x.Task</p>*@
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                }
+            }
+        </div>
+        <div class="w-100"></div>
+
+        <div class="col border">
+            column 3
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadtant3")
+                {
+                    @*<p>@x.Task</p>*@
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                }
+            }
+        </div>
+        <div class="col border">
+            column 4
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadtant4")
+                {
+                    @*<p>@x.Task</p>*@
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                }
+            }
+        </div>
+    </div>
+</div>
