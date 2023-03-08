@@ -11,6 +11,8 @@ namespace mission8_group1_3.Models
         [Key]
         [Required]
         public int taskId { get; set; }
+        [Required]
+        public string Task { get; set; }
         public DateTime dueDate { get; set; }
         [Required]
         public string Quadrant { get; set; }

@@ -61,7 +61,26 @@ namespace mission8_group1_3.Controllers
             ViewBag.Category = _QuadrantContext.Categories.ToList();
             var task_edit = _QuadrantContext.Responses.Single(x => x.taskId == id);
 
-            return View("QuadrantView", task_edit);
+            return View("AddEdit", task_edit);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Quadrants_Model x)
+        {
+            ViewBag.Categories = _QuadrantContext.Categories.ToList();
+
+            if (ModelState.IsValid)
+            {
+                _QuadrantContext.Update(x);
+                _QuadrantContext.SaveChanges();
+
+                return RedirectToAction("QuadrantView");
+            }
+            else
+            {
+                return View();
+            }
+
         }
 
         [HttpGet]

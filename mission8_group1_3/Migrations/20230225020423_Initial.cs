@@ -26,10 +26,11 @@ namespace mission8_group1_3.Migrations
                 {
                     taskId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Task = table.Column<string>(nullable: false),
                     dueDate = table.Column<DateTime>(nullable: false),
-                    Quadrant = table.Column<int>(nullable: false),
-                    CategoryID = table.Column<int>(nullable: false),
-                    Completed = table.Column<bool>(nullable: false)
+                    Quadrant = table.Column<string>(nullable: false),
+                    Completed = table.Column<bool>(nullable: false),
+                    CategoryID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

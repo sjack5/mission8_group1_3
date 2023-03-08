@@ -1,4 +1,84 @@
 ﻿@{
+    ViewData["Title"] = "Quadrant View";
 }
 
-<p>This is where I was thinking we could put our quadrant   -Spencer</p>
+@model List<Quadrants_Model>
+
+<h3>Steven Covey's Time Management Matrix</h3>
+
+<div class="container" style="padding-top:5rem;">
+    
+    <div class="row border">
+        <div class="col border" style="text-align:center;"><b>Steven Covey's Time Management Matrix</b></div>
+        <div class="w-100"></div>
+        <div class="col-2"></div>
+        <div class="col border" style="text-align:center;">Urgent</div>
+        <div class="col border" style="text-align:center;"> Not Urgent</div>
+        <div class="w-100"></div>
+        <div class="col-2 border">Important</div>
+
+        <div class="col border">
+            column 1
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadrant1" && x.Completed == false)
+                {
+                    <p>@x.Task</p>
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                    <p><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.taskId">Edit</a></p>
+                    <p><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.taskId">Delete</a></p>
+                }
+            }
+        </div>
+        <div class="col border">
+            column 2
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadrant2" && x.Completed == false)
+                {
+                    <p>@x.Task</p>
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                    <p><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.taskId">Edit</a></p>
+                    <p><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.taskId">Delete</a></p>
+                }
+            }
+        </div>
+        <div class="w-100"></div>
+        <div class="col-2 border">Not Important</div>
+
+        <div class="col border">
+            column 3
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadrant3" && x.Completed == false)
+                {
+                    <p>@x.Task</p>
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                    <p><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.taskId">Edit</a></p>
+                    <p><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.taskId">Delete</a></p>
+                }
+            }
+        </div>
+        <div class="col border">
+            column 4
+            @foreach (var x in Model)
+            {
+                if (x.Quadrant == "Quadrant4" && x.Completed == false)
+                {
+                    <p>@x.Task</p>
+                    <p>@x.dueDate</p>
+                    <p>@x.Category</p>
+                    <p>@x.Completed</p>
+                    <p><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.taskId">Edit</a></p>
+                    <p><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.taskId">Delete</a></p>
+                }
+            }
+        </div>
+    </div>
+</div>

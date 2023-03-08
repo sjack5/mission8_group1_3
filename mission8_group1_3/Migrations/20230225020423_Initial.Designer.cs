@@ -9,7 +9,7 @@ using mission8_group1_3.Models;
 namespace mission8_group1_3.Migrations
 {
     [DbContext(typeof(QuadrantContext))]
-    [Migration("20230224022203_Initial")]
+    [Migration("20230225020423_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,8 +66,13 @@ namespace mission8_group1_3.Migrations
                     b.Property<bool>("Completed")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Quadrant")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Quadrant")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Task")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("dueDate")
                         .HasColumnType("TEXT");
